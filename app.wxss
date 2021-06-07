@@ -1,0 +1,10 @@
+@import "colorui/main.wxss"; /* 引入自定义组件 */
+@import "colorui/icon.wxss"; /* 引入自定义组件 */
+@import "/miniprogram_npm/vant-weapp/common/index.wxss";
+
+.container{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: GoogleSans;
+}

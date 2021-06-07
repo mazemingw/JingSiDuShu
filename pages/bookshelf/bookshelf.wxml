@@ -1,0 +1,41 @@
+<!--pages/bookshelf/bookshelf.wxml-->
+<!-- 免写导航栏 除非删了系统的 -->
+<!-- 不要手痒关闭顶栏，否则立马就炸 -->
+
+<view class="section tc" id="videoplayer">
+  <video id="myVideo" src="https://cmosshenzhen.oss-cn-shenzhen.aliyuncs.com/456.mp4" danmu-list="{{danmuList}}" enable controls style="width: 100%;  display: inline-block; box-sizing: border-box; top: 0rpx; position: relative"></video>
+</view>
+
+
+<scroll-view scroll-x class="bg-green nav text-center">
+  <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
+    <text class="cuIcon-camerafill"></text> 书架
+  </view>
+  <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+    <text class="cuIcon-upstagefill"></text> 足迹
+  </view>
+  <view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="2">
+    <text class="cuIcon-clothesfill"></text> 工具
+  </view>
+</scroll-view>
+
+
+<scroll-view class="scroll-view " scroll-y style="height:100vh">
+  <view class="cu-list menu-avatar ">
+    <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}} item-{{index}} list" wx:for="{{bookshelf}}" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}" wx:key="index">
+    <navigator url="../read/read?link={{item.link}}&id={{item.detail._id}}" class="nav">
+      <view class="icon">
+        <image class="iconImg" lazy-load="true" src="{{item.show ? item.detail.cover :noCover}}" mode="aspectFill"></image>
+      </view>
+      <view class="sortName">
+        <view class="title">{{item.detail.title}}</view>
+        <view class="shortIntro van-ellipsis">最新章节：{{item.detail.lastChapter}}</view>
+        <view class="updated"> 更新于 {{item.detail.updated}}</view>
+      </view>
+    </navigator>
+    <view class="move">
+      <view class="bg-red" bindtap="deleteBook" data-id="{{item.detail._id}}">删除</view>
+    </view>
+    </view>
+  </view>
+</scroll-view>

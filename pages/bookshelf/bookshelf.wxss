@@ -1,0 +1,71 @@
+/* pages/bookshelf/bookshelf.wxss */
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+.cu-list.menu-avatar>.cu-item {
+	padding-left: 20rpx;
+  padding-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.nav{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+}
+
+.icon{
+  width:80rpx;
+  height:120rpx;
+}
+
+.iconImg{
+  width:100%;
+  height:100%;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx 5rpx #c5c5c5;
+}
+
+.sortName{
+  height:100%;
+  width:590rpx;
+  display: flex; 
+  flex-direction:column;
+}
+
+/* 注意 不要用纯黑色title 看起来怪怪的 */
+.title{
+  font-family: microsoft-yahei;
+  font-size:34rpx;
+  font-weight: blod;
+  color:#202020;
+  flex:1;
+  padding-left: 5%;
+}
+
+.shortIntro{
+  font-size:26rpx;
+  color:#ff0000;
+  flex:1;
+  padding-left: 5%;
+}
+
+.updated{
+  font-size:26rpx;
+  color:#929292;
+  flex:1;
+  padding-left: 5%;
+}
+
+.videoView{
+  display: flex;
+  justify-content: center;
+}
+.control_title{
+  margin-left: 25rpx;
+}
+
